@@ -14,9 +14,8 @@
 ![image](https://github.com/Aurum-Platform/.github/assets/106421807/daa31764-54ba-4be0-96f5-f98977a2c104)
 
 ## Aurum Oracle service
-<p align = "center"> 
-  <img src="https://github.com/Aurum-Platform/.github/assets/106421807/62053a9b-d6db-4f1d-a244-55f216716c1b" style="background-color: black; display: inline-block;">
-</p align = "center">
+
+![image](https://github.com/Aurum-Platform/.github/assets/106421807/486c4129-241c-4de0-bbaa-65687d48baf7)
 
 
 ## Chainlink standard schema for Any API

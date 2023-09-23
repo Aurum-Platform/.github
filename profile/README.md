@@ -1,5 +1,5 @@
 <p align = "center"> 
-  <img src="./svg.svg" height="70" width="80" style="background-color: black; display: inline-block;">
+  <img src="https://github.com/Aurum-Platform/.github/blob/main/profile/svg.svg" height="70" width="80" style="background-color: black; display: inline-block;">
   <h2 align="center">Aurum-Protocol</h2>
 </p align = "center">
   <p align="center">

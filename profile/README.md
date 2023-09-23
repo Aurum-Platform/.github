@@ -9,7 +9,6 @@
     <br />
     <br />
     
-    
 - [About The Project](#about-the-project)
 - [Inspiration](#inspiration)
 - [Protocol Architecture](#protocol-architecture)
@@ -67,23 +66,24 @@ After determining the price of NFT and their borrowing power, users can secure a
 ### Chainlink Node Setup and Job Execution
 
  * A Chainlink node is established to facilitate data retrieval processes.
- * A Chainlink job is configured within the node to interact with an external adapter via a Chainlink bridge.
+ * A Chainlink TOML job is configured within the node to interact with an external adapter via a Chainlink bridge.
 
 ### Requesting NFT Floor Price through Aurum Client Contract
 
  * When a user requests the floor price of an NFT, it triggers the Aurum client contract.
- * This contract subsequently calls a pre-deployed oracle contract, initiating a connection with a live Chainlink node via the bridge.
+ * If the price is present in the contract before the deadline it is return.
+ * Else this contract subsequently calls a pre-deployed oracle contract, initiating a connection with a live Chainlink node.
 
 ### Fetching NFT Floor Price and Providing to User
 
- * The Chainlink node, through the configured TOML job, calls the external adapter, which in turn contacts an external API to retrieve the NFT floor price.
+ * The Chainlink node, runnig the configured TOML job, through the bridge, calls the external adapter, which in turn contacts an external API to retrieve the NFT floor price.
  * The external adapter fulfills the TOML job, and the node calls the oracle with the acquired floor price.
- * The oracle verifies the address and signature of the incoming data from the Chainlink node, ensuring its authenticity, and then provides the verified floor price to the user.
+ * The oracle verifies the address of the node and incoming data from the Chainlink node, ensuring its authenticity, and then provides the verified floor price to the user through multiple on chain calls.
 
-
-## Chainlink standard schema for Any API
+### Chainlink standard schema for Any API
 ![architecture](https://github.com/Aurum-Platform/.github/assets/106421807/444b59f5-758d-409a-90d3-598f7a6d2879)
-
+  
+---
 ## Links and references
 - Contract on Etherscan: [Etherscan](https://sepolia.etherscan.io/address/0xff0af63633f2feeb37a9e6bd46013a6333b20460)
 - Figma File's: [Figma](https://www.figma.com/file/glPqL1ZHLqNwPauBKnm7Kw/Untitled?type=design&node-id=0-1&t=VFufaBNNwZgKHQ5y-0)

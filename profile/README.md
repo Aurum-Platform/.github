@@ -17,13 +17,11 @@
   - [Loan Terms and Repayment](#loan-terms-and-repayment)
   - [Lenders and Yield Generation](#lenders-and-yield-generation)
   - [Advantages](#advantages-over-peer-to-peer-lending)
-- [How we built it](#how-we-built-it)
-  - [AurumV2Core](#contract-aurumv2core-in-development)
-  - [AurumV1Core](#contract-aurumv1core-deployed)
-- [Challenges](#challenges-we-ran-into)
-- [Accomplishments](#accomplishments-that-were-proud-of)
-- [Learnings](#what-we-learned)
-- [Components](#links)
+- [Oracle Architecture](#aurum-oracle)
+  - [Chainlink Node Setup and Job Execution](#chainlink-node-setup-and-job-execution)
+  - [NFT Floor Price request](#requesting-nft-floor-price-through-aurum-client-contract)
+  - [Fetching Floor Price](#fetching-nft-floor-price-and-providing-to-user)
+- [Links and references](#links-and-references)
 
 ---
 
@@ -62,11 +60,32 @@ After determining the price of NFT and their borrowing power, users can secure a
   
 ---
 
-## Aurum Oracle service
+## Aurum Oracle
 
 ![image](https://github.com/Aurum-Platform/.github/assets/106421807/486c4129-241c-4de0-bbaa-65687d48baf7)
+
+### Chainlink Node Setup and Job Execution
+
+ * A Chainlink node is established to facilitate data retrieval processes.
+ * A Chainlink job is configured within the node to interact with an external adapter via a Chainlink bridge.
+
+### Requesting NFT Floor Price through Aurum Client Contract
+
+ * When a user requests the floor price of an NFT, it triggers the Aurum client contract.
+ * This contract subsequently calls a pre-deployed oracle contract, initiating a connection with a live Chainlink node via the bridge.
+
+### Fetching NFT Floor Price and Providing to User
+
+ * The Chainlink node, through the configured TOML job, calls the external adapter, which in turn contacts an external API to retrieve the NFT floor price.
+ * The external adapter fulfills the TOML job, and the node calls the oracle with the acquired floor price.
+ * The oracle verifies the address and signature of the incoming data from the Chainlink node, ensuring its authenticity, and then provides the verified floor price to the user.
 
 
 ## Chainlink standard schema for Any API
 ![architecture](https://github.com/Aurum-Platform/.github/assets/106421807/444b59f5-758d-409a-90d3-598f7a6d2879)
-credits [here](https://github.com/zeuslawyer/cl-fall22-external-adapters.git)
+
+## Links and references
+- Contract on Etherscan: [Etherscan](https://sepolia.etherscan.io/address/0xff0af63633f2feeb37a9e6bd46013a6333b20460)
+- Figma File's: [Figma](https://www.figma.com/file/glPqL1ZHLqNwPauBKnm7Kw/Untitled?type=design&node-id=0-1&t=VFufaBNNwZgKHQ5y-0)
+- Subgraphs' Link: [Subgraph](https://thegraph.com/studio/subgraph/aurumv1core_/)
+- Reference chainlink repo: [Repo](https://github.com/zeuslawyer/cl-fall22-external-adapters.git)

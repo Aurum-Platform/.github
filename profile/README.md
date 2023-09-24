@@ -85,7 +85,7 @@ After determining the price of NFT and their borrowing power, users can secure a
   
 ---
 ## Links and references
-- Contract on Etherscan: [Etherscan](https://sepolia.etherscan.io/address/0xff0af63633f2feeb37a9e6bd46013a6333b20460)
+- Contract on Etherscan: [Etherscan](https://sepolia.etherscan.io/address/0x532dFde42Cf3F2286B0B8223E22CdaBE45249F46)
 - Figma File's: [Figma](https://www.figma.com/file/glPqL1ZHLqNwPauBKnm7Kw/Untitled?type=design&node-id=0-1&t=VFufaBNNwZgKHQ5y-0)
-- Subgraphs' Link: [Subgraph](https://thegraph.com/studio/subgraph/aurumv1core_/)
+- Subgraphs' Link: [Subgraph](https://thegraph.com/studio/subgraph/aurum/)
 - Reference chainlink repo: [Repo](https://github.com/zeuslawyer/cl-fall22-external-adapters.git)

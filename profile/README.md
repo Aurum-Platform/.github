@@ -40,7 +40,7 @@ Driven by the desire to address this gap, we set out to create a **decentralized
 ![image](https://github.com/Aurum-Platform/.github/assets/106421807/daa31764-54ba-4be0-96f5-f98977a2c104)
 
 ### Collateralization and Borrowing:
-  Users can securely borrow ETH by using their NFT as collateral. The collateral value of the NFT is determined by the **Chainlink NFT Price Feed oracles**, and it uses **Chainlink ETH to USD Price Feed oracle** to get the ETH to USD price for the protocol, which provides real-time price valuation of NFTs. Additionally, the user's borrowing power is calculated based on the NFT value fetched by the oracles multiplied by the loan-to-value ratio of the asset.
+  Users can securely borrow ETH by using their NFT as collateral. The collateral value of the NFT is determined by the **On-Demand Floor Price Oracle using Chainlinks External Adapter and Alchemy floor price API**, and it uses **Chainlink ETH to USD Price Feed oracle** to get the ETH to USD price for the protocol, which provides real-time price valuation of NFTs. Additionally, the user's borrowing power is calculated based on the NFT value fetched by the oracles multiplied by the loan-to-value ratio of the asset.
 
 ### Loan Terms and Repayment:
 After determining the price of NFT and their borrowing power, users can secure a loan at an interest rate specified by the protocol. Borrowers must repay the loan before the debt maturity date to avoid liquidation of their collateral. If a borrower fails to repay the loan in time, the debt position is liquidated, and the NFT is auctioned in the protocol's "NFTs Auction" section, with the value determined by the Chainlink Price Feed oracle.

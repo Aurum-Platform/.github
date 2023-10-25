@@ -5,7 +5,7 @@
   <p align="center">
    NFT Lending Borrowing Solution 
     <br />
-    <a href="https://nft-lending-borrowing-protocol.vercel.app/"><strong>Try it out (on sepoli) »</strong></a>
+<!--     <a href="https://nft-lending-borrowing-protocol.vercel.app/"><strong>Try it out (on sepoli) »</strong></a> -->
     <br />
     <br />
     
